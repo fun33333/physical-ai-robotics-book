@@ -21,19 +21,19 @@ This document outlines the detailed, dependency-ordered tasks for setting up the
 - [X] T005 Local Serve Test: Run `npm run serve` to confirm site serves locally and basic navigation works
 
 ### Phase 2: GitHub Repository and Initial Push
-- [ ] T006 Create a new public GitHub repository named `physical-ai-robotics-book` under `fun33333`
-- [ ] T007 Add a comprehensive `.gitignore` file to exclude `node_modules`, `build/`, `.docusaurus/`, etc.
-- [ ] T008 Initial Commit and Push: Commit the initialized Docusaurus project and push to the new GitHub repository
+- [X] T006 Create a new public GitHub repository named `physical-ai-robotics-book` under `fun33333`
+- [X] T007 Add a comprehensive `.gitignore` file to exclude `node_modules`, `build/`, `.docusaurus/`, etc.
+- [X] T008 Initial Commit and Push: Commit the initialized Docusaurus project and push to the new GitHub repository
 
 ### Phase 3: GitHub Actions Deployment Setup
-- [ ] T009 Create `.github/workflows/deploy.yml` for GitHub Actions workflow
-- [ ] T010 Configure `deploy.yml` to trigger on pushes to `main`, use Node.js 18+, build Docusaurus, and deploy `build/` directory to GitHub Pages
-- [ ] T011 Commit Workflow: Commit and push `deploy.yml` to the `main` branch
+- [X] T009 Create `.github/workflows/deploy.yml` for GitHub Actions workflow
+- [X] T010 Configure `deploy.yml` to trigger on pushes to `main`, use Node.js 18+, build Docusaurus, and deploy `build/` directory to GitHub Pages
+- [X] T011 Commit Workflow: Commit and push `deploy.yml` to the `main` branch
 
 ### Phase 4: End-to-End Deployment Verification
-- [ ] T012 Monitor GitHub Actions workflow run for successful completion
-- [ ] T013 Access GitHub Pages Site: Verify site is accessible at `https://fun33333.github.io/physical-ai-robotics-book/`
-- [ ] T014 Test Basic Navigation: Confirm internal navigation works on the deployed site
+- [X] T012 Monitor GitHub Actions workflow run for successful completion
+- [X] T013 Access GitHub Pages Site: Verify site is accessible at `https://fun33333.github.io/physical-ai-robotics-book/`
+- [X] T014 Test Basic Navigation: Confirm internal navigation works on the deployed site
 
 ## 2. Dependency Graph
 
