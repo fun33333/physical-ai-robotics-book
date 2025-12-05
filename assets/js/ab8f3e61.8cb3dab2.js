@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkbook_website=globalThis.webpackChunkbook_website||[]).push([[3567],{9023:o=>{o.exports=JSON.parse('{"metadata":{"permalink":"/physical-ai-robotics-book/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
