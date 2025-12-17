@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-weekly-breakdown/week-03-04" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Week 3-4: Simulation Systems | Physical AI &amp; Humanoid Robotics Book</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://fun33333.github.io/physical-ai-robotics-book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://fun33333.github.io/physical-ai-robotics-book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Week 3-4: Simulation Systems | Physical AI &amp; Humanoid Robotics Book"><meta data-rh="true" name="description" content="Building simulation environments with Gazebo and Unity for testing robotics algorithms without physical hardware"><meta data-rh="true" property="og:description" content="Building simulation environments with Gazebo and Unity for testing robotics algorithms without physical hardware"><link data-rh="true" rel="icon" href="/physical-ai-robotics-book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04/"><link data-rh="true" rel="alternate" href="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04/" hreflang="en"><link data-rh="true" rel="alternate" href="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Week 3-4: Simulation Systems","item":"https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04"}]}</script><link rel="alternate" type="application/rss+xml" href="/physical-ai-robotics-book/blog/rss.xml" title="Physical AI &amp; Humanoid Robotics Book RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/physical-ai-robotics-book/blog/atom.xml" title="Physical AI &amp; Humanoid Robotics Book Atom Feed"><link rel="stylesheet" href="/physical-ai-robotics-book/assets/css/styles.9c53a5ce.css">
+<script src="/physical-ai-robotics-book/assets/js/runtime~main.758d8e59.js" defer="defer"></script>
+<script src="/physical-ai-robotics-book/assets/js/main.7777d2dc.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/physical-ai-robotics-book/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/physical-ai-robotics-book/"><div class="navbar__logo"><img src="/physical-ai-robotics-book/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/physical-ai-robotics-book/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI Book</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/physical-ai-robotics-book/docs/intro/">Docs</a><a class="navbar__item navbar__link" href="/physical-ai-robotics-book/blog/">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/fun33333/physical-ai-robotics-book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/physical-ai-robotics-book/docs/intro/"><span title="Introduction" class="categoryLinkLabel_W154">Introduction</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/intro/"><span title="Introduction to Physical AI" class="linkLabel_WmDU">Introduction to Physical AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/why-physical-ai/"><span title="Why Physical AI?" class="linkLabel_WmDU">Why Physical AI?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/learning-outcomes/"><span title="Learning Outcomes" class="linkLabel_WmDU">Learning Outcomes</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-1/"><span title="Module 1: The Robotic Nervous System (ROS 2)" class="categoryLinkLabel_W154">Module 1: The Robotic Nervous System (ROS 2)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-2/"><span title="Module 2: The Digital Twin (Gazebo &amp; Unity)" class="categoryLinkLabel_W154">Module 2: The Digital Twin (Gazebo &amp; Unity)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-3/"><span title="Module 3: The AI-Robot Brain (NVIDIA Isaac)" class="categoryLinkLabel_W154">Module 3: The AI-Robot Brain (NVIDIA Isaac)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-4/"><span title="Module 4: Vision-Language-Action (VLA)" class="categoryLinkLabel_W154">Module 4: Vision-Language-Action (VLA)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/hardware/"><span title="Hardware Guide" class="categoryLinkLabel_W154">Hardware Guide</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/physical-ai-robotics-book/docs/weekly-breakdown/"><span title="Weekly Breakdown" class="categoryLinkLabel_W154">Weekly Breakdown</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/"><span title="Structured 8-Week Learning Path" class="linkLabel_WmDU">Structured 8-Week Learning Path</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-01-02/"><span title="Week 1-2: ROS 2 Fundamentals" class="linkLabel_WmDU">Week 1-2: ROS 2 Fundamentals</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04/"><span title="Week 3-4: Simulation Systems" class="linkLabel_WmDU">Week 3-4: Simulation Systems</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/"><span title="Week 5-6: Hardware &amp; Isaac Platform" class="linkLabel_WmDU">Week 5-6: Hardware &amp; Isaac Platform</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-07-08/"><span title="Week 7-8: Vision-Language-Action Systems" class="linkLabel_WmDU">Week 7-8: Vision-Language-Action Systems</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/assessments/"><span title="Assessments" class="categoryLinkLabel_W154">Assessments</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/physical-ai-robotics-book/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Weekly Breakdown</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Week 3-4: Simulation Systems</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Week 3-4: Simulation Systems</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>Weeks 3-4 focus on simulation environments that allow testing robotics algorithms without physical hardware. Students will learn to build environments using Gazebo and Unity, create robot models with URDF, and integrate with ROS 2 for realistic testing.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-objectives">Learning Objectives<a href="#learning-objectives" class="hash-link" aria-label="Direct link to Learning Objectives" title="Direct link to Learning Objectives" translate="no">​</a></h3>
+<p>By the end of this 2-week period, students will be able to:</p>
+<ul>
+<li class="">Create robot models using URDF with proper kinematics and dynamics</li>
+<li class="">Design simulation environments with obstacles and objects</li>
+<li class="">Integrate simulation with ROS 2 for sensor and control interface</li>
+<li class="">Validate algorithms in simulation before physical deployment</li>
+<li class="">Use Gazebo and Unity for different simulation scenarios</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="time-estimate">Time Estimate<a href="#time-estimate" class="hash-link" aria-label="Direct link to Time Estimate" title="Direct link to Time Estimate" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Total Time</strong>: 40 hours (20 hours per week)</li>
+<li class=""><strong>Theory</strong>: 6 hours</li>
+<li class=""><strong>Hands-on Lab</strong>: 26 hours</li>
+<li class=""><strong>Project Work</strong>: 8 hours</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="week-3-gazebo-fundamentals--urdf-modeling">Week 3: Gazebo Fundamentals &amp; URDF Modeling<a href="#week-3-gazebo-fundamentals--urdf-modeling" class="hash-link" aria-label="Direct link to Week 3: Gazebo Fundamentals &amp; URDF Modeling" title="Direct link to Week 3: Gazebo Fundamentals &amp; URDF Modeling" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-1-gazebo-installation--basics-4-hours">Day 1: Gazebo Installation &amp; Basics (4 hours)<a href="#day-1-gazebo-installation--basics-4-hours" class="hash-link" aria-label="Direct link to Day 1: Gazebo Installation &amp; Basics (4 hours)" title="Direct link to Day 1: Gazebo Installation &amp; Basics (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours">Morning (2 hours)<a href="#morning-2-hours" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Install Gazebo Fortress on Ubuntu 22.04</li>
+<li class="">Explore Gazebo interface and basic controls</li>
+<li class="">Understand physics parameters and simulation concepts</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours">Afternoon (2 hours)<a href="#afternoon-2-hours" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Launch sample worlds and robots</li>
+<li class="">Adjust physics parameters and lighting</li>
+<li class="">Basic interaction with the simulation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities">Daily Activities<a href="#daily-activities" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Install Gazebo Fortress following the official guide</li>
+<li class="">Launch sample worlds and experiment with physics</li>
+<li class="">Adjust parameters like gravity, friction, and time step</li>
+<li class="">Navigate the Gazebo interface and controls</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria">Checkpoint Criteria<a href="#checkpoint-criteria" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Gazebo Fortress launches without errors</li>
+<li class="">Can navigate and interact with sample worlds</li>
+<li class="">Understand the effect of physics parameters</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources">Resources<a href="#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://gazebosim.org/docs/fortress/install" target="_blank" rel="noopener noreferrer" class="">Gazebo Installation Guide</a></li>
+<li class=""><a href="https://gazebosim.org/tutorials" target="_blank" rel="noopener noreferrer" class="">Gazebo Tutorials</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-2-urdf-basics--robot-modeling-4-hours">Day 2: URDF Basics &amp; Robot Modeling (4 hours)<a href="#day-2-urdf-basics--robot-modeling-4-hours" class="hash-link" aria-label="Direct link to Day 2: URDF Basics &amp; Robot Modeling (4 hours)" title="Direct link to Day 2: URDF Basics &amp; Robot Modeling (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-1">Morning (2 hours)<a href="#morning-2-hours-1" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding URDF (Unified Robot Description Format)</li>
+<li class="">Links, joints, and transforms in robot modeling</li>
+<li class="">Visual, collision, and inertial properties</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-1">Afternoon (2 hours)<a href="#afternoon-2-hours-1" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Create simple robot models with URDF</li>
+<li class="">Add visual and collision properties</li>
+<li class="">Validate URDF with parsing tools</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-1">Daily Activities<a href="#daily-activities-1" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Build a simple wheeled robot URDF</li>
+<li class="">Add visual properties with colors and shapes</li>
+<li class="">Define collision models for the robot</li>
+<li class="">Validate URDF with <code>check_urdf</code> tool</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-1">Checkpoint Criteria<a href="#checkpoint-criteria-1" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">URDF file loads without errors in RViz2</li>
+<li class="">Robot displays properly with visual elements</li>
+<li class="">Collision elements are correctly defined</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-1">Resources<a href="#resources-1" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="http://wiki.ros.org/urdf/Tutorials" target="_blank" rel="noopener noreferrer" class="">URDF Tutorials</a></li>
+<li class=""><a href="http://wiki.ros.org/urdf/XML" target="_blank" rel="noopener noreferrer" class="">URDF Specification</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-3-advanced-urdf-concepts-4-hours">Day 3: Advanced URDF Concepts (4 hours)<a href="#day-3-advanced-urdf-concepts-4-hours" class="hash-link" aria-label="Direct link to Day 3: Advanced URDF Concepts (4 hours)" title="Direct link to Day 3: Advanced URDF Concepts (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-2">Morning (2 hours)<a href="#morning-2-hours-2" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Adding sensors to URDF models</li>
+<li class="">Transmission definitions for actuators</li>
+<li class="">Gazebo-specific extensions to URDF</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-2">Afternoon (2 hours)<a href="#afternoon-2-hours-2" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Create complex robot with multiple links</li>
+<li class="">Add joint limits, dynamics properties</li>
+<li class="">Integrate with Gazebo plugins</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-2">Daily Activities<a href="#daily-activities-2" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Add a camera sensor to your robot URDF</li>
+<li class="">Include IMU and LiDAR sensors</li>
+<li class="">Define transmission elements for actuators</li>
+<li class="">Test in Gazebo with sensor plugins</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-2">Checkpoint Criteria<a href="#checkpoint-criteria-2" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Robot includes valid sensor definitions</li>
+<li class="">Transmissions are correctly defined</li>
+<li class="">Gazebo recognizes all elements</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-2">Resources<a href="#resources-2" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="http://gazebosim.org/tutorials/?tut=ros2_overview" target="_blank" rel="noopener noreferrer" class="">Gazebo-ROS Integration</a></li>
+<li class=""><a href="http://gazebosim.org/tutorials/?tut=ros_sensors" target="_blank" rel="noopener noreferrer" class="">Sensor Plugins</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-4-world-building--environment-design-4-hours">Day 4: World Building &amp; Environment Design (4 hours)<a href="#day-4-world-building--environment-design-4-hours" class="hash-link" aria-label="Direct link to Day 4: World Building &amp; Environment Design (4 hours)" title="Direct link to Day 4: World Building &amp; Environment Design (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-3">Morning (2 hours)<a href="#morning-2-hours-3" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Creating custom Gazebo worlds</li>
+<li class="">Static and dynamic objects in environments</li>
+<li class="">Lighting and rendering options</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-3">Afternoon (2 hours)<a href="#afternoon-2-hours-3" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Design custom environments with obstacles</li>
+<li class="">Include textured surfaces and objects</li>
+<li class="">Test robot navigation in custom worlds</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-3">Daily Activities<a href="#daily-activities-3" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Create a warehouse environment SDF file</li>
+<li class="">Add shelves, boxes, and obstacles</li>
+<li class="">Include textured surfaces and lighting</li>
+<li class="">Test robot navigation in the world</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-3">Checkpoint Criteria<a href="#checkpoint-criteria-3" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Custom world loads in Gazebo</li>
+<li class="">Obstacles and environment elements are visible</li>
+<li class="">Robot can navigate the environment</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-3">Resources<a href="#resources-3" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="http://gazebosim.org/tutorials?tut=build_world" target="_blank" rel="noopener noreferrer" class="">World Tutorial</a></li>
+<li class=""><a href="http://sdformat.org/spec" target="_blank" rel="noopener noreferrer" class="">SDF Specification</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-5-week-3-project--integration-4-hours">Day 5: Week 3 Project &amp; Integration (4 hours)<a href="#day-5-week-3-project--integration-4-hours" class="hash-link" aria-label="Direct link to Day 5: Week 3 Project &amp; Integration (4 hours)" title="Direct link to Day 5: Week 3 Project &amp; Integration (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-4">Morning (2 hours)<a href="#morning-2-hours-4" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Combine robot model and environment</li>
+<li class="">Fine-tune physics and rendering parameters</li>
+<li class="">Validate simulation behavior</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-4">Afternoon (2 hours)<a href="#afternoon-2-hours-4" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Debug simulation issues</li>
+<li class="">Optimize simulation performance</li>
+<li class="">Document the simulation setup</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-4">Daily Activities<a href="#daily-activities-4" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Integrate robot with the custom world</li>
+<li class="">Adjust physics for realistic behavior</li>
+<li class="">Test various scenarios in simulation</li>
+<li class="">Document the setup and parameters</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-4">Checkpoint Criteria<a href="#checkpoint-criteria-4" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Robot operates correctly in custom environment</li>
+<li class="">Physics parameters are optimized</li>
+<li class="">Setup is documented for reproduction</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="week-4-ros-2-integration--advanced-simulation">Week 4: ROS 2 Integration &amp; Advanced Simulation<a href="#week-4-ros-2-integration--advanced-simulation" class="hash-link" aria-label="Direct link to Week 4: ROS 2 Integration &amp; Advanced Simulation" title="Direct link to Week 4: ROS 2 Integration &amp; Advanced Simulation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-6-ros-2-gazebo-bridge-4-hours">Day 6: ROS 2-Gazebo Bridge (4 hours)<a href="#day-6-ros-2-gazebo-bridge-4-hours" class="hash-link" aria-label="Direct link to Day 6: ROS 2-Gazebo Bridge (4 hours)" title="Direct link to Day 6: ROS 2-Gazebo Bridge (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-5">Morning (2 hours)<a href="#morning-2-hours-5" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding ros_gz bridge concept</li>
+<li class="">Configuring topic bridges between ROS 2 and Gazebo</li>
+<li class="">Message conversion and synchronization</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-5">Afternoon (2 hours)<a href="#afternoon-2-hours-5" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Implement basic bridge configuration</li>
+<li class="">Connect ROS 2 nodes to Gazebo</li>
+<li class="">Test sensor data flow from simulation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-5">Daily Activities<a href="#daily-activities-5" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Set up ros_gz bridge between ROS 2 and Gazebo</li>
+<li class="">Configure bridges for camera and LiDAR data</li>
+<li class="">Verify sensor data in ROS 2 topics</li>
+<li class="">Test command publishing to simulated robot</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-5">Checkpoint Criteria<a href="#checkpoint-criteria-5" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Bridge successfully transmits sensor data</li>
+<li class="">Commands are properly sent to simulated robot</li>
+<li class="">Data formats match expected ROS 2 conventions</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-4">Resources<a href="#resources-4" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://github.com/gazebosim/ros_gz" target="_blank" rel="noopener noreferrer" class="">ROS-Gazebo Bridge</a></li>
+<li class=""><a href="https://github.com/gazebosim/ros_gz/tree/ros2/bridge" target="_blank" rel="noopener noreferrer" class="">Bridge Tutorial</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-7-control-integration-4-hours">Day 7: Control Integration (4 hours)<a href="#day-7-control-integration-4-hours" class="hash-link" aria-label="Direct link to Day 7: Control Integration (4 hours)" title="Direct link to Day 7: Control Integration (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-6">Morning (2 hours)<a href="#morning-2-hours-6" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Robot state publisher and joint state publisher</li>
+<li class="">Differential drive plugin for mobile robots</li>
+<li class="">Controller configuration for simulated robots</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-6">Afternoon (2 hours)<a href="#afternoon-2-hours-6" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Implement teleoperation in simulation</li>
+<li class="">Test navigation stack in Gazebo</li>
+<li class="">Validate control responses</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-6">Daily Activities<a href="#daily-activities-6" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Configure differential drive plugin for your robot</li>
+<li class="">Set up robot state publisher for TF tree</li>
+<li class="">Implement basic teleop for control</li>
+<li class="">Test movement in Gazebo environment</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-6">Checkpoint Criteria<a href="#checkpoint-criteria-6" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Robot responds to velocity commands</li>
+<li class="">TF tree is properly published</li>
+<li class="">Control feels responsive and realistic</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-5">Resources<a href="#resources-5" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="http://gazebosim.org/tutorials?tut=ros2_control_system&amp;cat=connect_ros" target="_blank" rel="noopener noreferrer" class="">Differential Drive Plugin</a></li>
+<li class=""><a href="https://github.com/ros/robot_state_publisher" target="_blank" rel="noopener noreferrer" class="">Robot State Publisher</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-8-advanced-sensors--perception-4-hours">Day 8: Advanced Sensors &amp; Perception (4 hours)<a href="#day-8-advanced-sensors--perception-4-hours" class="hash-link" aria-label="Direct link to Day 8: Advanced Sensors &amp; Perception (4 hours)" title="Direct link to Day 8: Advanced Sensors &amp; Perception (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-7">Morning (2 hours)<a href="#morning-2-hours-7" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Implementing complex sensors in simulation</li>
+<li class="">Camera, LiDAR, IMU, and force/torque sensors</li>
+<li class="">Sensor noise and calibration simulation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-7">Afternoon (2 hours)<a href="#afternoon-2-hours-7" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Processing simulated sensor data</li>
+<li class="">Creating perception pipelines in simulation</li>
+<li class="">Validating sensor accuracy</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-7">Daily Activities<a href="#daily-activities-7" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Add multiple sensors to your robot</li>
+<li class="">Configure noise parameters for realism</li>
+<li class="">Process sensor data in ROS 2 nodes</li>
+<li class="">Validate sensor outputs against ground truth</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-7">Checkpoint Criteria<a href="#checkpoint-criteria-7" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Multiple sensors working in simulation</li>
+<li class="">Noise parameters add realism to data</li>
+<li class="">Sensor data can be processed successfully</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-6">Resources<a href="#resources-6" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="http://gazebosim.org/tutorials/?tut=ros_gz_sensors" target="_blank" rel="noopener noreferrer" class="">Gazebo Sensors</a></li>
+<li class=""><a href="http://wiki.ros.org/perception" target="_blank" rel="noopener noreferrer" class="">Perception Pipeline</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-9-unity-robotics-integration-4-hours">Day 9: Unity Robotics Integration (4 hours)<a href="#day-9-unity-robotics-integration-4-hours" class="hash-link" aria-label="Direct link to Day 9: Unity Robotics Integration (4 hours)" title="Direct link to Day 9: Unity Robotics Integration (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-8">Morning (2 hours)<a href="#morning-2-hours-8" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Introduction to Unity robotics tools</li>
+<li class="">Setting up Unity Robotics Hub</li>
+<li class="">Understanding Unity-ROS communication</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-8">Afternoon (2 hours)<a href="#afternoon-2-hours-8" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Creating a simple robot in Unity</li>
+<li class="">Connecting to ROS 2 via TCP/UDP</li>
+<li class="">Testing sensor and actuator interfaces</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-8">Daily Activities<a href="#daily-activities-8" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Install Unity Hub and Robotics package</li>
+<li class="">Create a basic robot model in Unity</li>
+<li class="">Set up ROS-TCP-Connector for communication</li>
+<li class="">Test bidirectional communication</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-8">Checkpoint Criteria<a href="#checkpoint-criteria-8" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Unity environment connects to ROS 2</li>
+<li class="">Basic robot movement is possible</li>
+<li class="">Communication is stable and reliable</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-7">Resources<a href="#resources-7" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://github.com/Unity-Technologies/Unity-Robotics-Hub" target="_blank" rel="noopener noreferrer" class="">Unity Robotics Hub</a></li>
+<li class=""><a href="https://github.com/Unity-Technologies/ROS-TCP-Connector" target="_blank" rel="noopener noreferrer" class="">ROS-TCP-Connector</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-10-week-4-project--assessment-4-hours">Day 10: Week 4 Project &amp; Assessment (4 hours)<a href="#day-10-week-4-project--assessment-4-hours" class="hash-link" aria-label="Direct link to Day 10: Week 4 Project &amp; Assessment (4 hours)" title="Direct link to Day 10: Week 4 Project &amp; Assessment (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-9">Morning (2 hours)<a href="#morning-2-hours-9" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Integrate all concepts into a complete simulation system</li>
+<li class="">Connect to ROS 2 and implement complex behaviors</li>
+<li class="">Test simulation as validation environment</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-9">Afternoon (2 hours)<a href="#afternoon-2-hours-9" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Performance optimization and validation</li>
+<li class="">Peer review and feedback</li>
+<li class="">Prepare for Week 5-6 (Hardware &amp; Isaac)</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-9">Daily Activities<a href="#daily-activities-9" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Build a complete simulation test environment</li>
+<li class="">Implement a complex behavior (navigation, manipulation)</li>
+<li class="">Validate that simulation matches expected behavior</li>
+<li class="">Document the simulation system</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-9">Checkpoint Criteria<a href="#checkpoint-criteria-9" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Complete simulation environment with robot and sensors</li>
+<li class="">ROS 2 integration works for all components</li>
+<li class="">Simulation can be used for algorithm validation</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assessment">Assessment<a href="#assessment" class="hash-link" aria-label="Direct link to Assessment" title="Direct link to Assessment" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="knowledge-check">Knowledge Check<a href="#knowledge-check" class="hash-link" aria-label="Direct link to Knowledge Check" title="Direct link to Knowledge Check" translate="no">​</a></h3>
+<p>Complete the Week 3-4 Quiz to verify your understanding of simulation systems.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="practical-assessment">Practical Assessment<a href="#practical-assessment" class="hash-link" aria-label="Direct link to Practical Assessment" title="Direct link to Practical Assessment" translate="no">​</a></h3>
+<p>Submit your complete simulation system including:</p>
+<ul>
+<li class="">URDF robot model with sensors</li>
+<li class="">Custom Gazebo world environment</li>
+<li class="">ROS 2 integration with bridge configuration</li>
+<li class="">Documentation and validation results</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="self-assessment-questions">Self-Assessment Questions<a href="#self-assessment-questions" class="hash-link" aria-label="Direct link to Self-Assessment Questions" title="Direct link to Self-Assessment Questions" translate="no">​</a></h3>
+<p>After completing this 2-week period, you should be able to answer:</p>
+<ol>
+<li class="">Create robot models with URDF and integrate with Gazebo</li>
+<li class="">Build custom simulation environments</li>
+<li class="">Connect simulation to ROS 2 with proper bridging</li>
+<li class="">Implement sensors in simulation and process their data</li>
+<li class="">Use simulation as a validation environment for algorithms</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="going-further">Going Further<a href="#going-further" class="hash-link" aria-label="Direct link to Going Further" title="Direct link to Going Further" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-topics">Advanced Topics<a href="#advanced-topics" class="hash-link" aria-label="Direct link to Advanced Topics" title="Direct link to Advanced Topics" translate="no">​</a></h3>
+<ul>
+<li class="">Physics-based simulation optimization</li>
+<li class="">Multi-robot simulation</li>
+<li class="">Realistic sensor simulation</li>
+<li class="">Integration with Unity for high-fidelity rendering</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-week-preview">Next Week Preview<a href="#next-week-preview" class="hash-link" aria-label="Direct link to Next Week Preview" title="Direct link to Next Week Preview" translate="no">​</a></h3>
+<p>In Weeks 5-6, you&#x27;ll learn about hardware integration and the NVIDIA Isaac platform, connecting your simulation skills with physical systems and GPU-accelerated perception.</p>
+<p>Ready to learn about hardware and advanced platforms? Continue with <a class="" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/">Week 5-6: Hardware &amp; Isaac</a>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/fun33333/physical-ai-robotics-book/tree/main/book-website/docs/weekly-breakdown/week-03-04.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-01-02/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Week 1-2: ROS 2 Fundamentals</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Week 5-6: Hardware &amp; Isaac Platform</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a><ul><li><a href="#learning-objectives" class="table-of-contents__link toc-highlight">Learning Objectives</a></li><li><a href="#time-estimate" class="table-of-contents__link toc-highlight">Time Estimate</a></li></ul></li><li><a href="#week-3-gazebo-fundamentals--urdf-modeling" class="table-of-contents__link toc-highlight">Week 3: Gazebo Fundamentals &amp; URDF Modeling</a><ul><li><a href="#day-1-gazebo-installation--basics-4-hours" class="table-of-contents__link toc-highlight">Day 1: Gazebo Installation &amp; Basics (4 hours)</a></li><li><a href="#day-2-urdf-basics--robot-modeling-4-hours" class="table-of-contents__link toc-highlight">Day 2: URDF Basics &amp; Robot Modeling (4 hours)</a></li><li><a href="#day-3-advanced-urdf-concepts-4-hours" class="table-of-contents__link toc-highlight">Day 3: Advanced URDF Concepts (4 hours)</a></li><li><a href="#day-4-world-building--environment-design-4-hours" class="table-of-contents__link toc-highlight">Day 4: World Building &amp; Environment Design (4 hours)</a></li><li><a href="#day-5-week-3-project--integration-4-hours" class="table-of-contents__link toc-highlight">Day 5: Week 3 Project &amp; Integration (4 hours)</a></li></ul></li><li><a href="#week-4-ros-2-integration--advanced-simulation" class="table-of-contents__link toc-highlight">Week 4: ROS 2 Integration &amp; Advanced Simulation</a><ul><li><a href="#day-6-ros-2-gazebo-bridge-4-hours" class="table-of-contents__link toc-highlight">Day 6: ROS 2-Gazebo Bridge (4 hours)</a></li><li><a href="#day-7-control-integration-4-hours" class="table-of-contents__link toc-highlight">Day 7: Control Integration (4 hours)</a></li><li><a href="#day-8-advanced-sensors--perception-4-hours" class="table-of-contents__link toc-highlight">Day 8: Advanced Sensors &amp; Perception (4 hours)</a></li><li><a href="#day-9-unity-robotics-integration-4-hours" class="table-of-contents__link toc-highlight">Day 9: Unity Robotics Integration (4 hours)</a></li><li><a href="#day-10-week-4-project--assessment-4-hours" class="table-of-contents__link toc-highlight">Day 10: Week 4 Project &amp; Assessment (4 hours)</a></li></ul></li><li><a href="#assessment" class="table-of-contents__link toc-highlight">Assessment</a><ul><li><a href="#knowledge-check" class="table-of-contents__link toc-highlight">Knowledge Check</a></li><li><a href="#practical-assessment" class="table-of-contents__link toc-highlight">Practical Assessment</a></li><li><a href="#self-assessment-questions" class="table-of-contents__link toc-highlight">Self-Assessment Questions</a></li></ul></li><li><a href="#going-further" class="table-of-contents__link toc-highlight">Going Further</a><ul><li><a href="#advanced-topics" class="table-of-contents__link toc-highlight">Advanced Topics</a></li><li><a href="#next-week-preview" class="table-of-contents__link toc-highlight">Next Week Preview</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/physical-ai-robotics-book/docs/intro/">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/physical-ai-robotics-book/blog/">Blog</a></li><li class="footer__item"><a href="https://github.com/fun33333/physical-ai-robotics-book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Book, Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

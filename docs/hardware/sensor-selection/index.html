@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-hardware/sensor-selection" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Sensor Selection Guide | Physical AI &amp; Humanoid Robotics Book</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://fun33333.github.io/physical-ai-robotics-book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://fun33333.github.io/physical-ai-robotics-book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://fun33333.github.io/physical-ai-robotics-book/docs/hardware/sensor-selection/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Sensor Selection Guide | Physical AI &amp; Humanoid Robotics Book"><meta data-rh="true" name="description" content="Comprehensive guide to selecting appropriate sensors for Physical AI applications with technical specifications and use cases"><meta data-rh="true" property="og:description" content="Comprehensive guide to selecting appropriate sensors for Physical AI applications with technical specifications and use cases"><link data-rh="true" rel="icon" href="/physical-ai-robotics-book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://fun33333.github.io/physical-ai-robotics-book/docs/hardware/sensor-selection/"><link data-rh="true" rel="alternate" href="https://fun33333.github.io/physical-ai-robotics-book/docs/hardware/sensor-selection/" hreflang="en"><link data-rh="true" rel="alternate" href="https://fun33333.github.io/physical-ai-robotics-book/docs/hardware/sensor-selection/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Sensor Selection Guide","item":"https://fun33333.github.io/physical-ai-robotics-book/docs/hardware/sensor-selection"}]}</script><link rel="alternate" type="application/rss+xml" href="/physical-ai-robotics-book/blog/rss.xml" title="Physical AI &amp; Humanoid Robotics Book RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/physical-ai-robotics-book/blog/atom.xml" title="Physical AI &amp; Humanoid Robotics Book Atom Feed"><link rel="stylesheet" href="/physical-ai-robotics-book/assets/css/styles.9c53a5ce.css">
+<script src="/physical-ai-robotics-book/assets/js/runtime~main.758d8e59.js" defer="defer"></script>
+<script src="/physical-ai-robotics-book/assets/js/main.7777d2dc.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/physical-ai-robotics-book/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/physical-ai-robotics-book/"><div class="navbar__logo"><img src="/physical-ai-robotics-book/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/physical-ai-robotics-book/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI Book</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/physical-ai-robotics-book/docs/intro/">Docs</a><a class="navbar__item navbar__link" href="/physical-ai-robotics-book/blog/">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/fun33333/physical-ai-robotics-book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/physical-ai-robotics-book/docs/intro/"><span title="Introduction" class="categoryLinkLabel_W154">Introduction</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/intro/"><span title="Introduction to Physical AI" class="linkLabel_WmDU">Introduction to Physical AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/why-physical-ai/"><span title="Why Physical AI?" class="linkLabel_WmDU">Why Physical AI?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/learning-outcomes/"><span title="Learning Outcomes" class="linkLabel_WmDU">Learning Outcomes</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-1/"><span title="Module 1: The Robotic Nervous System (ROS 2)" class="categoryLinkLabel_W154">Module 1: The Robotic Nervous System (ROS 2)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-2/"><span title="Module 2: The Digital Twin (Gazebo &amp; Unity)" class="categoryLinkLabel_W154">Module 2: The Digital Twin (Gazebo &amp; Unity)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-3/"><span title="Module 3: The AI-Robot Brain (NVIDIA Isaac)" class="categoryLinkLabel_W154">Module 3: The AI-Robot Brain (NVIDIA Isaac)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-4/"><span title="Module 4: Vision-Language-Action (VLA)" class="categoryLinkLabel_W154">Module 4: Vision-Language-Action (VLA)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/physical-ai-robotics-book/docs/hardware/"><span title="Hardware Guide" class="categoryLinkLabel_W154">Hardware Guide</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/"><span title="Hardware Guide for Physical AI" class="linkLabel_WmDU">Hardware Guide for Physical AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/required-hardware/"><span title="Required Hardware Specifications" class="linkLabel_WmDU">Required Hardware Specifications</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/budget-alternatives/"><span title="Budget Hardware Alternatives" class="linkLabel_WmDU">Budget Hardware Alternatives</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/optional-hardware/"><span title="Optional Hardware" class="linkLabel_WmDU">Optional Hardware</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/workstation-setup/"><span title="Workstation Setup Guide" class="linkLabel_WmDU">Workstation Setup Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/sensor-selection/"><span title="Sensor Selection Guide" class="linkLabel_WmDU">Sensor Selection Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/software-requirements/"><span title="Software Requirements" class="linkLabel_WmDU">Software Requirements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/hardware/robot-platforms/"><span title="Robot Platforms Guide" class="linkLabel_WmDU">Robot Platforms Guide</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/weekly-breakdown/"><span title="Weekly Breakdown" class="categoryLinkLabel_W154">Weekly Breakdown</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/assessments/"><span title="Assessments" class="categoryLinkLabel_W154">Assessments</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/physical-ai-robotics-book/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Hardware Guide</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Sensor Selection Guide</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Sensor Selection Guide</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>Sensors are the eyes, ears, and touch of your robot, providing the perception capabilities essential for Physical AI systems. Selecting the right sensors for your application requires balancing cost, accuracy, reliability, and computational requirements. This guide will help you choose the most appropriate sensors for your specific robotics projects.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sensor-categories">Sensor Categories<a href="#sensor-categories" class="hash-link" aria-label="Direct link to Sensor Categories" title="Direct link to Sensor Categories" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vision-sensors">Vision Sensors<a href="#vision-sensors" class="hash-link" aria-label="Direct link to Vision Sensors" title="Direct link to Vision Sensors" translate="no">​</a></h3>
+<p>Vision sensors enable your robot to perceive its environment in 2D and 3D, forming the foundation of most AI perception systems.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="rgb-cameras">RGB Cameras<a href="#rgb-cameras" class="hash-link" aria-label="Direct link to RGB Cameras" title="Direct link to RGB Cameras" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Color image capture for object recognition, navigation, and monitoring</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Resolution (e.g., 640x480, 1280x720, 1920x1080)</li>
+<li class="">Frame rate (e.g., 30, 60, 120 fps)</li>
+<li class="">Field of view (FOV)</li>
+<li class="">Interface (USB, GigE, MIPI)</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Resolution</th><th>Frame Rate</th><th>Interface</th><th>Price Range</th><th>Best Use Case</th></tr></thead><tbody><tr><td>Intel RealSense D435</td><td>1280x720 RGB, 1280x720 Depth</td><td>30-90 fps</td><td>USB 3.0</td><td>$200</td><td>General purpose with depth</td></tr><tr><td>FLIR Blackfly S</td><td>Various options up to 5.1MP</td><td>Up to 80 fps</td><td>GigE, USB3</td><td>$400-1200</td><td>Industrial machine vision</td></tr><tr><td>Arducam IMX477</td><td>8MP</td><td>30 fps</td><td>MIPI/USB</td><td>$100</td><td>Pi-based systems</td></tr><tr><td>Basler acA1300-75gc</td><td>1.3MP</td><td>75 fps</td><td>GigE</td><td>$300</td><td>High-speed applications</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="rgb-d-cameras">RGB-D Cameras<a href="#rgb-d-cameras" class="hash-link" aria-label="Direct link to RGB-D Cameras" title="Direct link to RGB-D Cameras" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Simultaneous color and depth information for 3D scene understanding</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Depth accuracy (mm)</li>
+<li class="">Range (meters)</li>
+<li class="">Resolution of depth map</li>
+<li class="">Operating principle (stereo, structured light, ToF)</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Depth Accuracy</th><th>Range</th><th>Resolution</th><th>Technology</th><th>Price Range</th></tr></thead><tbody><tr><td>Intel RealSense D435</td><td>±2% at 1m</td><td>0.2-10m</td><td>1280x720</td><td>Stereo</td><td>$200</td></tr><tr><td>Intel RealSense D455</td><td>±1% at 1m</td><td>0.1-3.5 (close) / 0.3-10 (far) m</td><td>1280x720</td><td>Stereo</td><td>$500</td></tr><tr><td>Stereolabs ZED 2i</td><td>Better outdoor</td><td>0.2-20m</td><td>2208x1242</td><td>Stereo</td><td>$600</td></tr><tr><td>Orbbec Astra Pro 2</td><td>±3mm at 1m</td><td>0.6-6m</td><td>640x480</td><td>Structured light</td><td>$150</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="thermal-cameras">Thermal Cameras<a href="#thermal-cameras" class="hash-link" aria-label="Direct link to Thermal Cameras" title="Direct link to Thermal Cameras" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Detecting heat signatures, useful in low-visibility conditions</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Thermal sensitivity</li>
+<li class="">Temperature range</li>
+<li class="">Resolution (thermal image)</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Resolution</th><th>Sensitivity</th><th>Range</th><th>Interface</th><th>Price Range</th></tr></thead><tbody><tr><td>FLIR Lepton <code>3.5</code></td><td>160x120</td><td>less than 50mK</td><td>-10 to +400 degrees C</td><td>SPI/USB</td><td>$350</td></tr><tr><td>Seek Compact Pro (320x240)</td><td>320x240</td><td>less than 50mK</td><td>-40 to +330 degrees C</td><td>USB</td><td>$1000</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="range-sensors">Range Sensors<a href="#range-sensors" class="hash-link" aria-label="Direct link to Range Sensors" title="Direct link to Range Sensors" translate="no">​</a></h3>
+<p>Range sensors provide distance measurements that are essential for navigation and mapping.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2d-lidar">2D LiDAR<a href="#2d-lidar" class="hash-link" aria-label="Direct link to 2D LiDAR" title="Direct link to 2D LiDAR" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Planar distance scanning for navigation and mapping</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Range (meters)</li>
+<li class="">Angular resolution (degrees)</li>
+<li class="">Scan rate (Hz)</li>
+<li class="">Number of points per revolution</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Range</th><th>Resolution</th><th>Scan Rate</th><th>Points/Rev</th><th>Price Range</th></tr></thead><tbody><tr><td>Slamtec RPLidar A1</td><td>6m</td><td>0.44°</td><td>5-15 Hz</td><td>~8000</td><td>$150</td></tr><tr><td>Hokuyo URG-04LX-UG01</td><td>4m</td><td>0.36°</td><td>10 Hz</td><td>682</td><td>$350</td></tr><tr><td>SICK TiM571</td><td>25m</td><td>0.33°</td><td>15 Hz</td><td>~4000</td><td>$1300</td></tr><tr><td>Velodyne Puck</td><td>100m</td><td>0.4° vertical</td><td>5-20 Hz</td><td>~300,000</td><td>$4000</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3d-lidar">3D LiDAR<a href="#3d-lidar" class="hash-link" aria-label="Direct link to 3D LiDAR" title="Direct link to 3D LiDAR" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Full 3D environment mapping</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Range (meters)</li>
+<li class="">Angular resolution (vertical/horizontal)</li>
+<li class="">FOV (vertical/horizontal)</li>
+<li class="">Point cloud density</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Range</th><th>Vertical Resolution</th><th>Horizontal Resolution</th><th>FOV</th><th>Price Range</th></tr></thead><tbody><tr><td>Velodyne VLP-16</td><td>100m</td><td>2°</td><td>0.1-0.4°</td><td>30° vertical, 360° horizontal</td><td>$8000</td></tr><tr><td>Ouster OS0-32</td><td>75m</td><td>0.75°</td><td>1.15°</td><td>90° vertical, 360° horizontal</td><td>$6000</td></tr><tr><td>Livox Horizon</td><td>260m</td><td>0.18°-3.96°</td><td>0.18°-0.36°</td><td>81.7° vertical, 360° horizontal</td><td>$2000</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="time-of-flight-tof-sensors">Time-of-Flight (ToF) Sensors<a href="#time-of-flight-tof-sensors" class="hash-link" aria-label="Direct link to Time-of-Flight (ToF) Sensors" title="Direct link to Time-of-Flight (ToF) Sensors" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Distance measurement using light pulses</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Range (meters)</li>
+<li class="">Resolution (X,Y)</li>
+<li class="">Accuracy</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Range</th><th>Resolution</th><th>Accuracy</th><th>Price Range</th></tr></thead><tbody><tr><td>PMD O3M324</td><td>0.1-4m</td><td>176x132</td><td>±10mm</td><td>$500</td></tr><tr><td>Intel RealSense L515</td><td>0.25-9m</td><td>1024x768</td><td>±1%</td><td>$300</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inertial-sensors">Inertial Sensors<a href="#inertial-sensors" class="hash-link" aria-label="Direct link to Inertial Sensors" title="Direct link to Inertial Sensors" translate="no">​</a></h3>
+<p>Inertial sensors provide information about acceleration, rotation, and orientation, crucial for robot state estimation.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="imus-inertial-measurement-units">IMUs (Inertial Measurement Units)<a href="#imus-inertial-measurement-units" class="hash-link" aria-label="Direct link to IMUs (Inertial Measurement Units)" title="Direct link to IMUs (Inertial Measurement Units)" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Measure linear acceleration and angular velocity</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Accelerometer range (±g)</li>
+<li class="">Gyroscope range (±dps)</li>
+<li class="">Noise density</li>
+<li class="">Bias instability</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Accel Range</th><th>Gyro Range</th><th>Noise Density Accel</th><th>Noise Density Gyro</th><th>Price Range</th></tr></thead><tbody><tr><td>Bosch BNO055</td><td>±2/4/8/16g</td><td>±2000°/s</td><td>150 μg/√Hz</td><td>11.8 mdps/√Hz</td><td>$30</td></tr><tr><td>ADIS16470</td><td>±180g</td><td>±450°/s</td><td>2.8 mg/√Hz</td><td>1.5 mdps/√Hz</td><td>$350</td></tr><tr><td>VectorNav VN-100</td><td>±16g</td><td>±2000°/s</td><td>less than 0.5 mg/√Hz</td><td>less than 0.015 °/s/√Hz</td><td>$300</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="magnetometers">Magnetometers<a href="#magnetometers" class="hash-link" aria-label="Direct link to Magnetometers" title="Direct link to Magnetometers" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Measure magnetic fields for compass heading</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Resolution</li>
+<li class="">Range</li>
+<li class="">Power consumption</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Resolution</th><th>Range</th><th>Power</th><th>Price Range</th></tr></thead><tbody><tr><td>Honeywell HMC5883L</td><td>16-bit</td><td>±8.1 Gauss</td><td>100 μA</td><td>$10</td></tr><tr><td>Bosch BMM150</td><td>16-bit</td><td>±1300 μT</td><td>8.4 μA</td><td>$5</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="environmental-sensors">Environmental Sensors<a href="#environmental-sensors" class="hash-link" aria-label="Direct link to Environmental Sensors" title="Direct link to Environmental Sensors" translate="no">​</a></h3>
+<p>Environmental sensors help robots understand their surroundings beyond visual and motion information.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="temperature-sensors">Temperature Sensors<a href="#temperature-sensors" class="hash-link" aria-label="Direct link to Temperature Sensors" title="Direct link to Temperature Sensors" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Monitor environmental or system temperatures</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Accuracy</li>
+<li class="">Range</li>
+<li class="">Response time</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="humidity-sensors">Humidity Sensors<a href="#humidity-sensors" class="hash-link" aria-label="Direct link to Humidity Sensors" title="Direct link to Humidity Sensors" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Measure environmental humidity</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Accuracy</li>
+<li class="">Range</li>
+<li class="">Response time</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Accuracy</th><th>Range</th><th>Interface</th><th>Price Range</th></tr></thead><tbody><tr><td>Sensirion SHT30</td><td>±2% RH</td><td>0-100% RH</td><td>I2C</td><td>$10</td></tr><tr><td>Honeywell HIH6130</td><td>±2% RH</td><td>0-100% RH</td><td>I2C</td><td>$8</td></tr></tbody></table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="barometric-pressure-sensors">Barometric Pressure Sensors<a href="#barometric-pressure-sensors" class="hash-link" aria-label="Direct link to Barometric Pressure Sensors" title="Direct link to Barometric Pressure Sensors" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Purpose</strong>: Measure atmospheric pressure for altitude estimation</li>
+<li class=""><strong>Key Specifications</strong>:<!-- -->
+<ul>
+<li class="">Accuracy</li>
+<li class="">Pressure range</li>
+<li class="">Temperature compensation</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>Sensor Model</th><th>Accuracy</th><th>Resolution</th><th>Interface</th><th>Price Range</th></tr></thead><tbody><tr><td>Bosch BMP280</td><td>±1 Pa</td><td>0.01 Pa</td><td>I2C/SPI</td><td>$5</td></tr><tr><td>TE Connectivity MS5611</td><td>±1.5 mbar</td><td>0.012 mbar</td><td>I2C/SPI</td><td>$15</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="selection-criteria">Selection Criteria<a href="#selection-criteria" class="hash-link" aria-label="Direct link to Selection Criteria" title="Direct link to Selection Criteria" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Important Consideration</div><div class="admonitionContent_BuS1"><p>When selecting sensors, always consider the entire pipeline: sensing → processing → action. A high-resolution sensor is only valuable if your compute platform can process the data in real-time for your application.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="application-specific-considerations">Application-Specific Considerations<a href="#application-specific-considerations" class="hash-link" aria-label="Direct link to Application-Specific Considerations" title="Direct link to Application-Specific Considerations" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="navigation-and-mapping">Navigation and Mapping<a href="#navigation-and-mapping" class="hash-link" aria-label="Direct link to Navigation and Mapping" title="Direct link to Navigation and Mapping" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Primary Sensors</strong>: 2D or 3D LiDAR, RGB-D cameras</li>
+<li class=""><strong>Secondary Sensors</strong>: IMU for odometry enhancement</li>
+<li class=""><strong>Key Factors</strong>: Accuracy, range, update rate</li>
+<li class=""><strong>Example</strong>: Hokuyo URG for indoor navigation, Velodyne for outdoor mapping</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="manipulation">Manipulation<a href="#manipulation" class="hash-link" aria-label="Direct link to Manipulation" title="Direct link to Manipulation" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Primary Sensors</strong>: RGB-D cameras, force/torque sensors</li>
+<li class=""><strong>Secondary Sensors</strong>: Joint encoders, tactile sensors</li>
+<li class=""><strong>Key Factors</strong>: Accuracy, latency, spatial resolution</li>
+<li class=""><strong>Example</strong>: Intel RealSense for object recognition, ATI Gamma for force control</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="human-robot-interaction">Human-Robot Interaction<a href="#human-robot-interaction" class="hash-link" aria-label="Direct link to Human-Robot Interaction" title="Direct link to Human-Robot Interaction" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Primary Sensors</strong>: RGB cameras, microphones, proximity sensors</li>
+<li class=""><strong>Secondary Sensors</strong>: Speakers, displays, haptic feedback</li>
+<li class=""><strong>Key Factors</strong>: Privacy, user-friendliness, responsiveness</li>
+<li class=""><strong>Example</strong>: Multiple RGB cameras for social robotics</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="environmental-factors">Environmental Factors<a href="#environmental-factors" class="hash-link" aria-label="Direct link to Environmental Factors" title="Direct link to Environmental Factors" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="indoor-vs-outdoor">Indoor vs. Outdoor<a href="#indoor-vs-outdoor" class="hash-link" aria-label="Direct link to Indoor vs. Outdoor" title="Direct link to Indoor vs. Outdoor" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Outdoor Challenges</strong>: Sunlight interference, weather, dust</li>
+<li class=""><strong>Indoor Advantages</strong>: Controlled lighting, stable conditions</li>
+<li class=""><strong>Sensor Selection</strong>:<!-- -->
+<ul>
+<li class="">Outdoor: LiDAR, thermal cameras, GPS</li>
+<li class="">Indoor: IR sensors, structured light cameras</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="lighting-conditions">Lighting Conditions<a href="#lighting-conditions" class="hash-link" aria-label="Direct link to Lighting Conditions" title="Direct link to Lighting Conditions" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Low Light</strong>: Thermal cameras, LiDAR, active illumination</li>
+<li class=""><strong>Harsh Lighting</strong>: Polarizing filters, HDR cameras, LiDAR</li>
+<li class=""><strong>Variable Lighting</strong>: Adaptive exposure, multiple sensor fusion</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="temperature-and-humidity">Temperature and Humidity<a href="#temperature-and-humidity" class="hash-link" aria-label="Direct link to Temperature and Humidity" title="Direct link to Temperature and Humidity" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Extreme Cold</strong>: Heated enclosures, special lubricants</li>
+<li class=""><strong>High Humidity</strong>: Sealed enclosures, corrosion-resistant materials</li>
+<li class=""><strong>Large Variations</strong>: Temperature-compensated sensors</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="budget-constraints">Budget Constraints<a href="#budget-constraints" class="hash-link" aria-label="Direct link to Budget Constraints" title="Direct link to Budget Constraints" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tier-1-budget-under-500">Tier 1: Budget (under $500)<a href="#tier-1-budget-under-500" class="hash-link" aria-label="Direct link to Tier 1: Budget (under $500)" title="Direct link to Tier 1: Budget (under $500)" translate="no">​</a></h4>
+<ul>
+<li class="">IMU: MPU6050 or Bosch BNO055</li>
+<li class="">Camera: USB webcam or Intel RealSense D435</li>
+<li class="">Range: HC-SR04 ultrasonic sensors</li>
+<li class="">Connectivity: USB, WiFi, Bluetooth</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tier-2-recommended-500-2000">Tier 2: Recommended ($500-$2000)<a href="#tier-2-recommended-500-2000" class="hash-link" aria-label="Direct link to Tier 2: Recommended ($500-$2000)" title="Direct link to Tier 2: Recommended ($500-$2000)" translate="no">​</a></h4>
+<ul>
+<li class="">Camera: Intel RealSense D455 or Stereolabs ZED</li>
+<li class="">LiDAR: Slamtec RPLidar or Hokuyo URG</li>
+<li class="">IMU: ADIS16470 or VectorNav VN-100</li>
+<li class="">Connectivity: Ethernet, CAN bus</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tier-3-premium-2000">Tier 3: Premium ($2000+)<a href="#tier-3-premium-2000" class="hash-link" aria-label="Direct link to Tier 3: Premium ($2000+)" title="Direct link to Tier 3: Premium ($2000+)" translate="no">​</a></h4>
+<ul>
+<li class="">Camera: Basler or FLIR industrial cameras</li>
+<li class="">LiDAR: SICK TiM or Velodyne Puck</li>
+<li class="">IMU: High-end VectorNav or Epson G370</li>
+<li class="">Connectivity: Time-synchronized protocols</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="integration-complexity">Integration Complexity<a href="#integration-complexity" class="hash-link" aria-label="Direct link to Integration Complexity" title="Direct link to Integration Complexity" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-integration">Hardware Integration<a href="#hardware-integration" class="hash-link" aria-label="Direct link to Hardware Integration" title="Direct link to Hardware Integration" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Connectors</strong>: Standard vs. proprietary</li>
+<li class=""><strong>Mounting</strong>: Standard brackets vs. custom solutions</li>
+<li class=""><strong>Power</strong>: Voltage requirements, power consumption</li>
+<li class=""><strong>Form Factor</strong>: Size constraints in robot design</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="software-integration">Software Integration<a href="#software-integration" class="hash-link" aria-label="Direct link to Software Integration" title="Direct link to Software Integration" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Driver Availability</strong>: ROS packages, SDKs, APIs</li>
+<li class=""><strong>Calibration</strong>: Factory calibrated vs. field calibration</li>
+<li class=""><strong>Data Formats</strong>: Standardized vs. proprietary</li>
+<li class=""><strong>Update Rates</strong>: Synchronization requirements</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sensor-fusion-concepts">Sensor Fusion Concepts<a href="#sensor-fusion-concepts" class="hash-link" aria-label="Direct link to Sensor Fusion Concepts" title="Direct link to Sensor Fusion Concepts" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-fusion-approaches">Basic Fusion Approaches<a href="#basic-fusion-approaches" class="hash-link" aria-label="Direct link to Basic Fusion Approaches" title="Direct link to Basic Fusion Approaches" translate="no">​</a></h3>
+<p>For many robotics applications, using multiple sensors together (sensor fusion) provides more robust and accurate perception than individual sensors.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="early-fusion">Early Fusion<a href="#early-fusion" class="hash-link" aria-label="Direct link to Early Fusion" title="Direct link to Early Fusion" translate="no">​</a></h4>
+<ul>
+<li class="">Combine sensor data at the raw signal level</li>
+<li class="">Requires time synchronization</li>
+<li class="">High data rates but potentially better resolution</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="late-fusion">Late Fusion<a href="#late-fusion" class="hash-link" aria-label="Direct link to Late Fusion" title="Direct link to Late Fusion" translate="no">​</a></h4>
+<ul>
+<li class="">Process sensors independently then combine results</li>
+<li class="">Lower computational requirements</li>
+<li class="">More fault-tolerant to individual sensor failures</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="state-vector-fusion">State Vector Fusion<a href="#state-vector-fusion" class="hash-link" aria-label="Direct link to State Vector Fusion" title="Direct link to State Vector Fusion" translate="no">​</a></h4>
+<ul>
+<li class="">Combine state estimates from different sensors</li>
+<li class="">Uses techniques like Kalman filtering</li>
+<li class="">Common in navigation applications</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="common-fusion-configurations">Common Fusion Configurations<a href="#common-fusion-configurations" class="hash-link" aria-label="Direct link to Common Fusion Configurations" title="Direct link to Common Fusion Configurations" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="visual-inertial-odometry-vio">Visual-Inertial Odometry (VIO)<a href="#visual-inertial-odometry-vio" class="hash-link" aria-label="Direct link to Visual-Inertial Odometry (VIO)" title="Direct link to Visual-Inertial Odometry (VIO)" translate="no">​</a></h4>
+<ul>
+<li class="">Combines camera images with IMU data</li>
+<li class="">Provides robust motion estimation</li>
+<li class="">Used in applications where wheel odometry is unreliable</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="slam-with-multiple-sensors">SLAM with Multiple Sensors<a href="#slam-with-multiple-sensors" class="hash-link" aria-label="Direct link to SLAM with Multiple Sensors" title="Direct link to SLAM with Multiple Sensors" translate="no">​</a></h4>
+<ul>
+<li class="">Combines LiDAR, cameras, and IMUs</li>
+<li class="">Provides map creation and localization</li>
+<li class="">Robust to environmental conditions</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sensor-placement">Sensor Placement<a href="#sensor-placement" class="hash-link" aria-label="Direct link to Sensor Placement" title="Direct link to Sensor Placement" translate="no">​</a></h3>
+<ul>
+<li class="">Position sensors to minimize occlusions</li>
+<li class="">Consider safety: avoid placing fragile sensors in collision zones</li>
+<li class="">Plan for maintenance access</li>
+<li class="">Account for robot&#x27;s center of gravity when mounting heavy sensors</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="calibration-requirements">Calibration Requirements<a href="#calibration-requirements" class="hash-link" aria-label="Direct link to Calibration Requirements" title="Direct link to Calibration Requirements" translate="no">​</a></h3>
+<ul>
+<li class="">Factory-calibrated sensors: Less setup but limited flexibility</li>
+<li class="">Field-calibrated sensors: More setup but potentially better performance</li>
+<li class="">Maintain calibration records and schedules</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mounting-considerations">Mounting Considerations<a href="#mounting-considerations" class="hash-link" aria-label="Direct link to Mounting Considerations" title="Direct link to Mounting Considerations" translate="no">​</a></h3>
+<ul>
+<li class="">Rigid mounting to minimize vibration effects</li>
+<li class="">Shock absorption for delicate sensors</li>
+<li class="">Thermal management to avoid heating effects</li>
+<li class="">Cable management to prevent strain</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="redundancy-planning">Redundancy Planning<a href="#redundancy-planning" class="hash-link" aria-label="Direct link to Redundancy Planning" title="Direct link to Redundancy Planning" translate="no">​</a></h3>
+<ul>
+<li class="">Critical sensors: Consider redundant systems</li>
+<li class="">Non-critical sensors: Single system with fallbacks</li>
+<li class="">Budget for redundancy: Factor into overall system cost</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-and-validation">Testing and Validation<a href="#testing-and-validation" class="hash-link" aria-label="Direct link to Testing and Validation" title="Direct link to Testing and Validation" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance-validation">Performance Validation<a href="#performance-validation" class="hash-link" aria-label="Direct link to Performance Validation" title="Direct link to Performance Validation" translate="no">​</a></h3>
+<ul>
+<li class="">Test sensors under expected environmental conditions</li>
+<li class="">Validate accuracy against known references</li>
+<li class="">Check for electromagnetic interference</li>
+<li class="">Verify data rates and communication reliability</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="integration-testing">Integration Testing<a href="#integration-testing" class="hash-link" aria-label="Direct link to Integration Testing" title="Direct link to Integration Testing" translate="no">​</a></h3>
+<ul>
+<li class="">Verify sensor data is accessible in your software framework</li>
+<li class="">Test time synchronization between sensors</li>
+<li class="">Validate sensor calibration procedures</li>
+<li class="">Test error handling and fault recovery</li>
+</ul>
+<hr>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>Exercise 4: Sensor Selection for a Mobile Robot</div><div class="admonitionContent_BuS1"><p><strong>Objective</strong>: Select an appropriate sensor suite for a mobile robot operating in an indoor warehouse environment</p><p><strong>Time Estimate</strong>: 45 minutes</p><p><strong>Steps</strong>:</p><ol>
+<li class="">Define your robot&#x27;s primary functions (navigation, mapping, obstacle avoidance)</li>
+<li class="">Identify environmental challenges (lighting, obstacles, space constraints)</li>
+<li class="">Create a list of required sensor types</li>
+<li class="">Research specific sensor models that meet your requirements</li>
+<li class="">Calculate the total cost of your sensor suite</li>
+<li class="">Consider backup options for critical sensors</li>
+</ol><p><strong>Expected Result</strong>: A detailed sensor specification document with models, specifications, and justification for your choices</p><p><strong>Hints</strong>:</p><ul>
+<li class="">Consider the trade-offs between LiDAR and camera sensing</li>
+<li class="">Account for the robot&#x27;s computational resources</li>
+<li class="">Factor in the need for redundancy for critical functions</li>
+</ul></div></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/fun33333/physical-ai-robotics-book/tree/main/book-website/docs/hardware/sensor-selection.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/physical-ai-robotics-book/docs/hardware/workstation-setup/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Workstation Setup Guide</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/physical-ai-robotics-book/docs/hardware/software-requirements/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Software Requirements</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#sensor-categories" class="table-of-contents__link toc-highlight">Sensor Categories</a><ul><li><a href="#vision-sensors" class="table-of-contents__link toc-highlight">Vision Sensors</a></li><li><a href="#range-sensors" class="table-of-contents__link toc-highlight">Range Sensors</a></li><li><a href="#inertial-sensors" class="table-of-contents__link toc-highlight">Inertial Sensors</a></li><li><a href="#environmental-sensors" class="table-of-contents__link toc-highlight">Environmental Sensors</a></li></ul></li><li><a href="#selection-criteria" class="table-of-contents__link toc-highlight">Selection Criteria</a><ul><li><a href="#application-specific-considerations" class="table-of-contents__link toc-highlight">Application-Specific Considerations</a></li><li><a href="#environmental-factors" class="table-of-contents__link toc-highlight">Environmental Factors</a></li><li><a href="#budget-constraints" class="table-of-contents__link toc-highlight">Budget Constraints</a></li><li><a href="#integration-complexity" class="table-of-contents__link toc-highlight">Integration Complexity</a></li></ul></li><li><a href="#sensor-fusion-concepts" class="table-of-contents__link toc-highlight">Sensor Fusion Concepts</a><ul><li><a href="#basic-fusion-approaches" class="table-of-contents__link toc-highlight">Basic Fusion Approaches</a></li><li><a href="#common-fusion-configurations" class="table-of-contents__link toc-highlight">Common Fusion Configurations</a></li></ul></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a><ul><li><a href="#sensor-placement" class="table-of-contents__link toc-highlight">Sensor Placement</a></li><li><a href="#calibration-requirements" class="table-of-contents__link toc-highlight">Calibration Requirements</a></li><li><a href="#mounting-considerations" class="table-of-contents__link toc-highlight">Mounting Considerations</a></li><li><a href="#redundancy-planning" class="table-of-contents__link toc-highlight">Redundancy Planning</a></li></ul></li><li><a href="#testing-and-validation" class="table-of-contents__link toc-highlight">Testing and Validation</a><ul><li><a href="#performance-validation" class="table-of-contents__link toc-highlight">Performance Validation</a></li><li><a href="#integration-testing" class="table-of-contents__link toc-highlight">Integration Testing</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/physical-ai-robotics-book/docs/intro/">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/physical-ai-robotics-book/blog/">Blog</a></li><li class="footer__item"><a href="https://github.com/fun33333/physical-ai-robotics-book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Book, Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-weekly-breakdown/week-05-06" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Week 5-6: Hardware &amp; Isaac Platform | Physical AI &amp; Humanoid Robotics Book</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://fun33333.github.io/physical-ai-robotics-book/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://fun33333.github.io/physical-ai-robotics-book/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Week 5-6: Hardware &amp; Isaac Platform | Physical AI &amp; Humanoid Robotics Book"><meta data-rh="true" name="description" content="Hardware integration and NVIDIA Isaac platform for GPU-accelerated robotics and perception"><meta data-rh="true" property="og:description" content="Hardware integration and NVIDIA Isaac platform for GPU-accelerated robotics and perception"><link data-rh="true" rel="icon" href="/physical-ai-robotics-book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/"><link data-rh="true" rel="alternate" href="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/" hreflang="en"><link data-rh="true" rel="alternate" href="https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Week 5-6: Hardware & Isaac Platform","item":"https://fun33333.github.io/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06"}]}</script><link rel="alternate" type="application/rss+xml" href="/physical-ai-robotics-book/blog/rss.xml" title="Physical AI &amp; Humanoid Robotics Book RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/physical-ai-robotics-book/blog/atom.xml" title="Physical AI &amp; Humanoid Robotics Book Atom Feed"><link rel="stylesheet" href="/physical-ai-robotics-book/assets/css/styles.9c53a5ce.css">
+<script src="/physical-ai-robotics-book/assets/js/runtime~main.758d8e59.js" defer="defer"></script>
+<script src="/physical-ai-robotics-book/assets/js/main.7777d2dc.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/physical-ai-robotics-book/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/physical-ai-robotics-book/"><div class="navbar__logo"><img src="/physical-ai-robotics-book/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/physical-ai-robotics-book/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Physical AI Book</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/physical-ai-robotics-book/docs/intro/">Docs</a><a class="navbar__item navbar__link" href="/physical-ai-robotics-book/blog/">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/fun33333/physical-ai-robotics-book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/physical-ai-robotics-book/docs/intro/"><span title="Introduction" class="categoryLinkLabel_W154">Introduction</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/intro/"><span title="Introduction to Physical AI" class="linkLabel_WmDU">Introduction to Physical AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/why-physical-ai/"><span title="Why Physical AI?" class="linkLabel_WmDU">Why Physical AI?</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/learning-outcomes/"><span title="Learning Outcomes" class="linkLabel_WmDU">Learning Outcomes</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-1/"><span title="Module 1: The Robotic Nervous System (ROS 2)" class="categoryLinkLabel_W154">Module 1: The Robotic Nervous System (ROS 2)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-2/"><span title="Module 2: The Digital Twin (Gazebo &amp; Unity)" class="categoryLinkLabel_W154">Module 2: The Digital Twin (Gazebo &amp; Unity)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-3/"><span title="Module 3: The AI-Robot Brain (NVIDIA Isaac)" class="categoryLinkLabel_W154">Module 3: The AI-Robot Brain (NVIDIA Isaac)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/module-4/"><span title="Module 4: Vision-Language-Action (VLA)" class="categoryLinkLabel_W154">Module 4: Vision-Language-Action (VLA)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/hardware/"><span title="Hardware Guide" class="categoryLinkLabel_W154">Hardware Guide</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/physical-ai-robotics-book/docs/weekly-breakdown/"><span title="Weekly Breakdown" class="categoryLinkLabel_W154">Weekly Breakdown</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/"><span title="Structured 8-Week Learning Path" class="linkLabel_WmDU">Structured 8-Week Learning Path</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-01-02/"><span title="Week 1-2: ROS 2 Fundamentals" class="linkLabel_WmDU">Week 1-2: ROS 2 Fundamentals</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04/"><span title="Week 3-4: Simulation Systems" class="linkLabel_WmDU">Week 3-4: Simulation Systems</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-05-06/"><span title="Week 5-6: Hardware &amp; Isaac Platform" class="linkLabel_WmDU">Week 5-6: Hardware &amp; Isaac Platform</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-07-08/"><span title="Week 7-8: Vision-Language-Action Systems" class="linkLabel_WmDU">Week 7-8: Vision-Language-Action Systems</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/physical-ai-robotics-book/docs/assessments/"><span title="Assessments" class="categoryLinkLabel_W154">Assessments</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/physical-ai-robotics-book/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Weekly Breakdown</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Week 5-6: Hardware &amp; Isaac Platform</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Week 5-6: Hardware &amp; Isaac Platform</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>Weeks 5-6 combine hardware integration with NVIDIA Isaac platform concepts, focusing on GPU-accelerated robotics. Students will learn to integrate physical hardware components and leverage Isaac tools for perception and control.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-objectives">Learning Objectives<a href="#learning-objectives" class="hash-link" aria-label="Direct link to Learning Objectives" title="Direct link to Learning Objectives" translate="no">​</a></h3>
+<p>By the end of this 2-week period, students will be able to:</p>
+<ul>
+<li class="">Integrate physical hardware components with ROS 2</li>
+<li class="">Set up and use NVIDIA Isaac Sim for high-fidelity simulation</li>
+<li class="">Implement GPU-accelerated perception using Isaac ROS</li>
+<li class="">Deploy robot learning systems using Isaac Lab</li>
+<li class="">Connect hardware experience with simulation and GPU acceleration</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="time-estimate">Time Estimate<a href="#time-estimate" class="hash-link" aria-label="Direct link to Time Estimate" title="Direct link to Time Estimate" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Total Time</strong>: 40 hours (20 hours per week)</li>
+<li class=""><strong>Theory</strong>: 6 hours</li>
+<li class=""><strong>Hands-on Lab</strong>: 28 hours</li>
+<li class=""><strong>Project Work</strong>: 6 hours</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="week-5-hardware-integration--isaac-platform-introduction">Week 5: Hardware Integration &amp; Isaac Platform Introduction<a href="#week-5-hardware-integration--isaac-platform-introduction" class="hash-link" aria-label="Direct link to Week 5: Hardware Integration &amp; Isaac Platform Introduction" title="Direct link to Week 5: Hardware Integration &amp; Isaac Platform Introduction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-1-hardware-components-overview-4-hours">Day 1: Hardware Components Overview (4 hours)<a href="#day-1-hardware-components-overview-4-hours" class="hash-link" aria-label="Direct link to Day 1: Hardware Components Overview (4 hours)" title="Direct link to Day 1: Hardware Components Overview (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours">Morning (2 hours)<a href="#morning-2-hours" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Review of essential hardware components: sensors, actuators, computers</li>
+<li class="">Understanding specifications and selection criteria</li>
+<li class="">Power systems and distribution</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours">Afternoon (2 hours)<a href="#afternoon-2-hours" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Physical integration concepts and mounting</li>
+<li class="">Communication protocols: USB, Ethernet, I2C, SPI, CAN</li>
+<li class="">Safety considerations for hardware systems</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities">Daily Activities<a href="#daily-activities" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Research and document common robot hardware components</li>
+<li class="">Compare specifications of different sensors and actuators</li>
+<li class="">Plan a basic hardware integration approach</li>
+<li class="">Review safety protocols for hardware handling</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria">Checkpoint Criteria<a href="#checkpoint-criteria" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding of major hardware component categories</li>
+<li class="">Knowledge of different communication protocols</li>
+<li class="">Safety awareness for hardware work</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources">Resources<a href="#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://navigation.ros.org/setup_guides/index.html" target="_blank" rel="noopener noreferrer" class="">Hardware Integration Tutorial</a></li>
+<li class=""><a href="https://learn.adafruit.com/series/electronics-lesson" target="_blank" rel="noopener noreferrer" class="">Electronics Fundamentals</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-2-sensor-integration-4-hours">Day 2: Sensor Integration (4 hours)<a href="#day-2-sensor-integration-4-hours" class="hash-link" aria-label="Direct link to Day 2: Sensor Integration (4 hours)" title="Direct link to Day 2: Sensor Integration (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-1">Morning (2 hours)<a href="#morning-2-hours-1" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding different sensor types and their requirements</li>
+<li class="">Connecting and configuring basic sensors (IMU, cameras, LiDAR)</li>
+<li class="">Calibration concepts and procedures</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-1">Afternoon (2 hours)<a href="#afternoon-2-hours-1" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">ROS 2 drivers for common sensors</li>
+<li class="">Integration with existing ROS 2 system</li>
+<li class="">Data validation and quality assessment</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-1">Daily Activities<a href="#daily-activities-1" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Connect an IMU sensor to your robot computer</li>
+<li class="">Calibrate the IMU using ROS 2 tools</li>
+<li class="">Integrate sensor data into your ROS 2 system</li>
+<li class="">Validate sensor data quality and accuracy</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-1">Checkpoint Criteria<a href="#checkpoint-criteria-1" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Sensor connects and publishes data to ROS 2</li>
+<li class="">Calibration procedures are properly followed</li>
+<li class="">Sensor data is integrated with other systems</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-1">Resources<a href="#resources-1" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="http://wiki.ros.org/camera_calibration" target="_blank" rel="noopener noreferrer" class="">Sensor Calibration</a></li>
+<li class=""><a href="http://wiki.ros.org/robot_hardware" target="_blank" rel="noopener noreferrer" class="">Robot Hardware</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-3-actuator-integration-4-hours">Day 3: Actuator Integration (4 hours)<a href="#day-3-actuator-integration-4-hours" class="hash-link" aria-label="Direct link to Day 3: Actuator Integration (4 hours)" title="Direct link to Day 3: Actuator Integration (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-2">Morning (2 hours)<a href="#morning-2-hours-2" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding different actuator types (servos, DC motors, steppers)</li>
+<li class="">Motor controllers and driver configuration</li>
+<li class="">Feedback control systems</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-2">Afternoon (2 hours)<a href="#afternoon-2-hours-2" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Connecting actuators to ROS 2 control system</li>
+<li class="">Implementing basic control loops</li>
+<li class="">Safety mechanisms and soft limits</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-2">Daily Activities<a href="#daily-activities-2" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Set up motor controllers for actuator control</li>
+<li class="">Interface actuators with ROS 2 control system</li>
+<li class="">Implement basic position/velocity control</li>
+<li class="">Add safety mechanisms to prevent damage</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-2">Checkpoint Criteria<a href="#checkpoint-criteria-2" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Actuators respond to ROS 2 commands</li>
+<li class="">Control loops operate properly</li>
+<li class="">Safety systems are implemented</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-2">Resources<a href="#resources-2" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://control.ros.org/" target="_blank" rel="noopener noreferrer" class="">ROS 2 Control</a></li>
+<li class=""><a href="http://wiki.ros.org/pr2_mechanism" target="_blank" rel="noopener noreferrer" class="">Actuator Control</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-4-nvidia-isaac-platform-overview-4-hours">Day 4: NVIDIA Isaac Platform Overview (4 hours)<a href="#day-4-nvidia-isaac-platform-overview-4-hours" class="hash-link" aria-label="Direct link to Day 4: NVIDIA Isaac Platform Overview (4 hours)" title="Direct link to Day 4: NVIDIA Isaac Platform Overview (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-3">Morning (2 hours)<a href="#morning-2-hours-3" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Introduction to NVIDIA Isaac ecosystem</li>
+<li class="">Understanding Isaac Sim, Isaac ROS, and Isaac Lab</li>
+<li class="">Hardware requirements and setup</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-3">Afternoon (2 hours)<a href="#afternoon-2-hours-3" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Installing Isaac tools and requirements</li>
+<li class="">Understanding USD and Omniverse concepts</li>
+<li class="">Initial Isaac Sim exploration</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-3">Daily Activities<a href="#daily-activities-3" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Check hardware requirements for Isaac tools</li>
+<li class="">Install Isaac Sim prerequisites (NVIDIA drivers, Omniverse)</li>
+<li class="">Launch Isaac Sim with sample environments</li>
+<li class="">Explore the Isaac Sim interface and features</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-3">Checkpoint Criteria<a href="#checkpoint-criteria-3" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Isaac Sim launches and runs sample environments</li>
+<li class="">Hardware meets minimum requirements</li>
+<li class="">Basic understanding of Isaac ecosystem</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-3">Resources<a href="#resources-3" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/installation-guide/index.html" target="_blank" rel="noopener noreferrer" class="">Isaac Sim Installation</a></li>
+<li class=""><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/" target="_blank" rel="noopener noreferrer" class="">Isaac Documentation</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-5-isaac-sim-basics-4-hours">Day 5: Isaac Sim Basics (4 hours)<a href="#day-5-isaac-sim-basics-4-hours" class="hash-link" aria-label="Direct link to Day 5: Isaac Sim Basics (4 hours)" title="Direct link to Day 5: Isaac Sim Basics (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-4">Morning (2 hours)<a href="#morning-2-hours-4" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding USD (Universal Scene Description)</li>
+<li class="">Creating and importing robot models into Isaac Sim</li>
+<li class="">Physics configurations and material properties</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-4">Afternoon (2 hours)<a href="#afternoon-2-hours-4" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Setting up robot in Isaac Sim with sensors</li>
+<li class="">Configuring robot control interfaces</li>
+<li class="">Testing basic simulation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-4">Daily Activities<a href="#daily-activities-4" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Import your URDF robot into Isaac Sim</li>
+<li class="">Configure physics and materials for realism</li>
+<li class="">Add sensors to the simulated robot</li>
+<li class="">Test robot behavior in Isaac Sim</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-4">Checkpoint Criteria<a href="#checkpoint-criteria-4" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Robot model successfully imported to Isaac Sim</li>
+<li class="">Sensors properly configured in simulation</li>
+<li class="">Robot responds to basic commands in simulation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-4">Resources<a href="#resources-4" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/tutorial_2_foundations/tutorial_b_urdf_mimic.html" target="_blank" rel="noopener noreferrer" class="">Importing URDF</a></li>
+<li class=""><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/tutorial_3_behavior_sim/index.html" target="_blank" rel="noopener noreferrer" class="">Robot Simulation</a></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="week-6-isaac-ros--isaac-lab">Week 6: Isaac ROS &amp; Isaac Lab<a href="#week-6-isaac-ros--isaac-lab" class="hash-link" aria-label="Direct link to Week 6: Isaac ROS &amp; Isaac Lab" title="Direct link to Week 6: Isaac ROS &amp; Isaac Lab" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-6-isaac-ros-introduction-4-hours">Day 6: Isaac ROS Introduction (4 hours)<a href="#day-6-isaac-ros-introduction-4-hours" class="hash-link" aria-label="Direct link to Day 6: Isaac ROS Introduction (4 hours)" title="Direct link to Day 6: Isaac ROS Introduction (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-5">Morning (2 hours)<a href="#morning-2-hours-5" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding Isaac ROS architecture</li>
+<li class="">GPU-accelerated perception concepts</li>
+<li class="">Setting up Isaac ROS containers</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-5">Afternoon (2 hours)<a href="#afternoon-2-hours-5" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Running Isaac ROS perception nodes</li>
+<li class="">Understanding NITROS (NVIDIA Isaac Transport for ROS)</li>
+<li class="">Performance optimization techniques</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-5">Daily Activities<a href="#daily-activities-5" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Set up Isaac ROS Docker containers</li>
+<li class="">Run basic perception examples</li>
+<li class="">Test with sample robot data</li>
+<li class="">Measure performance improvements</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-5">Checkpoint Criteria<a href="#checkpoint-criteria-5" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Isaac ROS containers run successfully</li>
+<li class="">Perception nodes process data correctly</li>
+<li class="">Performance advantages are evident</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-5">Resources<a href="#resources-5" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://nvidia-isaac-ros.github.io/repositories_and_packages/index.html" target="_blank" rel="noopener noreferrer" class="">Isaac ROS Documentation</a></li>
+<li class=""><a href="https://nvidia-isaac-ros.github.io/concepts/perception/index.html" target="_blank" rel="noopener noreferrer" class="">Isaac ROS Examples</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-7-gpu-accelerated-perception-4-hours">Day 7: GPU-Accelerated Perception (4 hours)<a href="#day-7-gpu-accelerated-perception-4-hours" class="hash-link" aria-label="Direct link to Day 7: GPU-Accelerated Perception (4 hours)" title="Direct link to Day 7: GPU-Accelerated Perception (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-6">Morning (2 hours)<a href="#morning-2-hours-6" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Implementing DetectNet for object detection</li>
+<li class="">Understanding TensorRT optimization</li>
+<li class="">Performance considerations with GPU acceleration</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-6">Afternoon (2 hours)<a href="#afternoon-2-hours-6" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Setting up segmentation pipelines</li>
+<li class="">3D object detection and pose estimation</li>
+<li class="">Integration with navigation and manipulation</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-6">Daily Activities<a href="#daily-activities-6" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Deploy a pre-trained detection model with Isaac ROS</li>
+<li class="">Configure TensorRT for optimization</li>
+<li class="">Test detection on various inputs</li>
+<li class="">Integrate results with navigation system</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-6">Checkpoint Criteria<a href="#checkpoint-criteria-6" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">GPU-accelerated detection runs efficiently</li>
+<li class="">TensorRT optimization is properly configured</li>
+<li class="">Results are integrated with other systems</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-6">Resources<a href="#resources-6" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://nvidia-isaac-ros.github.io/packages/isaac_ros_detectnet/index.html" target="_blank" rel="noopener noreferrer" class="">DetectNet</a></li>
+<li class=""><a href="https://github.com/NVIDIA/TensorRT" target="_blank" rel="noopener noreferrer" class="">TensorRT Optimization</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-8-isaac-lab-introduction-4-hours">Day 8: Isaac Lab Introduction (4 hours)<a href="#day-8-isaac-lab-introduction-4-hours" class="hash-link" aria-label="Direct link to Day 8: Isaac Lab Introduction (4 hours)" title="Direct link to Day 8: Isaac Lab Introduction (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-7">Morning (2 hours)<a href="#morning-2-hours-7" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Understanding Isaac Lab for reinforcement learning</li>
+<li class="">Concepts of simulation-to-reality transfer</li>
+<li class="">Setting up Isaac Lab environment</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-7">Afternoon (2 hours)<a href="#afternoon-2-hours-7" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Running sample RL environments</li>
+<li class="">Understanding reward functions and training</li>
+<li class="">Analyzing trained policies</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-7">Daily Activities<a href="#daily-activities-7" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Install and configure Isaac Lab</li>
+<li class="">Run sample RL tasks (e.g., cartpole, lifting)</li>
+<li class="">Analyze training progress and metrics</li>
+<li class="">Test trained policies in simulation</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-7">Checkpoint Criteria<a href="#checkpoint-criteria-7" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Isaac Lab environments run successfully</li>
+<li class="">Training process completes without errors</li>
+<li class="">Policies perform as expected</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-7">Resources<a href="#resources-7" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://isaac-sim.github.io/IsaacLab/" target="_blank" rel="noopener noreferrer" class="">Isaac Lab Documentation</a></li>
+<li class=""><a href="https://spinningup.openai.com/en/latest/spinningup/rl_intro.html" target="_blank" rel="noopener noreferrer" class="">RL Concepts</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-9-integration-and-validation-4-hours">Day 9: Integration and Validation (4 hours)<a href="#day-9-integration-and-validation-4-hours" class="hash-link" aria-label="Direct link to Day 9: Integration and Validation (4 hours)" title="Direct link to Day 9: Integration and Validation (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-8">Morning (2 hours)<a href="#morning-2-hours-8" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Connecting hardware experience with Isaac tools</li>
+<li class="">Simulation-to-reality considerations</li>
+<li class="">Planning for real-world deployment</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-8">Afternoon (2 hours)<a href="#afternoon-2-hours-8" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Validating Isaac tools with hardware concepts</li>
+<li class="">Performance comparison: simulation vs. reality</li>
+<li class="">Domain randomization techniques</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-8">Daily Activities<a href="#daily-activities-8" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Compare perception results from real vs. simulated sensors</li>
+<li class="">Apply domain randomization to improve sim-to-real transfer</li>
+<li class="">Validate robot behavior in both environments</li>
+<li class="">Document differences and solutions</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-8">Checkpoint Criteria<a href="#checkpoint-criteria-8" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Comparison between simulation and reality is documented</li>
+<li class="">Domain randomization techniques are applied</li>
+<li class="">Sim-to-real transfer challenges are understood</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources-8">Resources<a href="#resources-8" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://arxiv.org/abs/1703.06907" target="_blank" rel="noopener noreferrer" class="">Domain Randomization</a></li>
+<li class=""><a href="https://openreview.net/forum?id=HJi0H1ZFMH" target="_blank" rel="noopener noreferrer" class="">Sim-to-Real Techniques</a></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="day-10-week-6-project--assessment-4-hours">Day 10: Week 6 Project &amp; Assessment (4 hours)<a href="#day-10-week-6-project--assessment-4-hours" class="hash-link" aria-label="Direct link to Day 10: Week 6 Project &amp; Assessment (4 hours)" title="Direct link to Day 10: Week 6 Project &amp; Assessment (4 hours)" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="morning-2-hours-9">Morning (2 hours)<a href="#morning-2-hours-9" class="hash-link" aria-label="Direct link to Morning (2 hours)" title="Direct link to Morning (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Integrate hardware concepts with Isaac platform</li>
+<li class="">Deploy complete perception and control system</li>
+<li class="">Test system in both simulation and with real hardware</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="afternoon-2-hours-9">Afternoon (2 hours)<a href="#afternoon-2-hours-9" class="hash-link" aria-label="Direct link to Afternoon (2 hours)" title="Direct link to Afternoon (2 hours)" translate="no">​</a></h4>
+<ul>
+<li class="">Final project submission and peer review</li>
+<li class="">Prepare for Week 7-8 (VLA Systems)</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="daily-activities-9">Daily Activities<a href="#daily-activities-9" class="hash-link" aria-label="Direct link to Daily Activities" title="Direct link to Daily Activities" translate="no">​</a></h4>
+<ol>
+<li class="">Build a complete system using hardware integration and Isaac tools</li>
+<li class="">Demonstrate perception and control in simulation</li>
+<li class="">Document the integration process and results</li>
+<li class="">Prepare for advanced AI topics</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkpoint-criteria-9">Checkpoint Criteria<a href="#checkpoint-criteria-9" class="hash-link" aria-label="Direct link to Checkpoint Criteria" title="Direct link to Checkpoint Criteria" translate="no">​</a></h4>
+<ul>
+<li class="">Complete system integrating hardware and Isaac concepts</li>
+<li class="">Performance in simulation and reality is validated</li>
+<li class="">System documentation is comprehensive</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="assessment">Assessment<a href="#assessment" class="hash-link" aria-label="Direct link to Assessment" title="Direct link to Assessment" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="knowledge-check">Knowledge Check<a href="#knowledge-check" class="hash-link" aria-label="Direct link to Knowledge Check" title="Direct link to Knowledge Check" translate="no">​</a></h3>
+<p>Complete the Week 5-6 Quiz to verify your understanding of hardware integration and Isaac platform.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="practical-assessment">Practical Assessment<a href="#practical-assessment" class="hash-link" aria-label="Direct link to Practical Assessment" title="Direct link to Practical Assessment" translate="no">​</a></h3>
+<p>Submit your complete hardware integration and Isaac system including:</p>
+<ul>
+<li class="">ROS 2 interface for hardware components</li>
+<li class="">Isaac Sim environment with robot</li>
+<li class="">Isaac ROS perception pipeline</li>
+<li class="">Isaac Lab training results</li>
+<li class="">Documentation of simulation-to-reality comparison</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="self-assessment-questions">Self-Assessment Questions<a href="#self-assessment-questions" class="hash-link" aria-label="Direct link to Self-Assessment Questions" title="Direct link to Self-Assessment Questions" translate="no">​</a></h3>
+<p>After completing this 2-week period, you should be able to answer:</p>
+<ol>
+<li class="">Integrate physical hardware with ROS 2 systems</li>
+<li class="">Set up and use NVIDIA Isaac Sim for simulation</li>
+<li class="">Deploy GPU-accelerated perception with Isaac ROS</li>
+<li class="">Train robot behaviors using Isaac Lab</li>
+<li class="">Understand challenges in simulation-to-reality transfer</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="going-further">Going Further<a href="#going-further" class="hash-link" aria-label="Direct link to Going Further" title="Direct link to Going Further" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="advanced-topics">Advanced Topics<a href="#advanced-topics" class="hash-link" aria-label="Direct link to Advanced Topics" title="Direct link to Advanced Topics" translate="no">​</a></h3>
+<ul>
+<li class="">Custom Isaac extensions</li>
+<li class="">Advanced domain randomization</li>
+<li class="">Real-time control systems</li>
+<li class="">Hardware-in-the-loop testing</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-week-preview">Next Week Preview<a href="#next-week-preview" class="hash-link" aria-label="Direct link to Next Week Preview" title="Direct link to Next Week Preview" translate="no">​</a></h3>
+<p>In Weeks 7-8, you&#x27;ll learn about Vision-Language-Action systems, exploring cutting-edge AI models that combine perception, language understanding, and action generation.</p>
+<p>Ready to explore advanced AI systems? Continue with <a class="" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-07-08/">Week 7-8: VLA Systems</a>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/fun33333/physical-ai-robotics-book/tree/main/book-website/docs/weekly-breakdown/week-05-06.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-03-04/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Week 3-4: Simulation Systems</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/physical-ai-robotics-book/docs/weekly-breakdown/week-07-08/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Week 7-8: Vision-Language-Action Systems</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a><ul><li><a href="#learning-objectives" class="table-of-contents__link toc-highlight">Learning Objectives</a></li><li><a href="#time-estimate" class="table-of-contents__link toc-highlight">Time Estimate</a></li></ul></li><li><a href="#week-5-hardware-integration--isaac-platform-introduction" class="table-of-contents__link toc-highlight">Week 5: Hardware Integration &amp; Isaac Platform Introduction</a><ul><li><a href="#day-1-hardware-components-overview-4-hours" class="table-of-contents__link toc-highlight">Day 1: Hardware Components Overview (4 hours)</a></li><li><a href="#day-2-sensor-integration-4-hours" class="table-of-contents__link toc-highlight">Day 2: Sensor Integration (4 hours)</a></li><li><a href="#day-3-actuator-integration-4-hours" class="table-of-contents__link toc-highlight">Day 3: Actuator Integration (4 hours)</a></li><li><a href="#day-4-nvidia-isaac-platform-overview-4-hours" class="table-of-contents__link toc-highlight">Day 4: NVIDIA Isaac Platform Overview (4 hours)</a></li><li><a href="#day-5-isaac-sim-basics-4-hours" class="table-of-contents__link toc-highlight">Day 5: Isaac Sim Basics (4 hours)</a></li></ul></li><li><a href="#week-6-isaac-ros--isaac-lab" class="table-of-contents__link toc-highlight">Week 6: Isaac ROS &amp; Isaac Lab</a><ul><li><a href="#day-6-isaac-ros-introduction-4-hours" class="table-of-contents__link toc-highlight">Day 6: Isaac ROS Introduction (4 hours)</a></li><li><a href="#day-7-gpu-accelerated-perception-4-hours" class="table-of-contents__link toc-highlight">Day 7: GPU-Accelerated Perception (4 hours)</a></li><li><a href="#day-8-isaac-lab-introduction-4-hours" class="table-of-contents__link toc-highlight">Day 8: Isaac Lab Introduction (4 hours)</a></li><li><a href="#day-9-integration-and-validation-4-hours" class="table-of-contents__link toc-highlight">Day 9: Integration and Validation (4 hours)</a></li><li><a href="#day-10-week-6-project--assessment-4-hours" class="table-of-contents__link toc-highlight">Day 10: Week 6 Project &amp; Assessment (4 hours)</a></li></ul></li><li><a href="#assessment" class="table-of-contents__link toc-highlight">Assessment</a><ul><li><a href="#knowledge-check" class="table-of-contents__link toc-highlight">Knowledge Check</a></li><li><a href="#practical-assessment" class="table-of-contents__link toc-highlight">Practical Assessment</a></li><li><a href="#self-assessment-questions" class="table-of-contents__link toc-highlight">Self-Assessment Questions</a></li></ul></li><li><a href="#going-further" class="table-of-contents__link toc-highlight">Going Further</a><ul><li><a href="#advanced-topics" class="table-of-contents__link toc-highlight">Advanced Topics</a></li><li><a href="#next-week-preview" class="table-of-contents__link toc-highlight">Next Week Preview</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/physical-ai-robotics-book/docs/intro/">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/physical-ai-robotics-book/blog/">Blog</a></li><li class="footer__item"><a href="https://github.com/fun33333/physical-ai-robotics-book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Book, Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
