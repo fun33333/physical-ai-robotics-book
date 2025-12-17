@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
-      "Bash(touch:*)"
+      "Bash(touch:*)",
+      "mcp__github__search_repositories",
+      "Bash(git fetch:*)",
+      "mcp__context7__resolve-library-id",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh:*)",
+      "Bash(.specify/scripts/bash/setup-plan.sh:*)"
     ],
     "deny": [],
     "ask": []
