@@ -177,13 +177,28 @@ class TestOrchestrationPipeline:
 
         context = PipelineContext(query="What is ROS?", user_id="user_1", session_id="s1")
 
-        result = await service.process_chat(context)
+        # Mock the agent calls
+        with patch("src.services.orchestration_service.retrieve_context") as mock_rag, \
+             patch("src.services.orchestration_service.generate_answer") as mock_answer, \
+             patch("src.services.orchestration_service.apply_tone") as mock_tone, \
+             patch("src.services.orchestration_service.validate_response") as mock_safety:
+            mock_rag.return_value = {
+                "chunks": [
+                    {"chunk_id": "c1", "text": "ROS 2 is a framework", "chapter": "Ch1", "section": "Intro"},
+                ],
+                "latency_ms": 100,
+            }
+            mock_answer.return_value = {"response": "Test response", "latency_ms": 200, "sources_used": ["c1"]}
+            mock_tone.return_value = {"response": "Toned response", "latency_ms": 50}
+            mock_safety.return_value = {"validation_status": "approved", "latency_ms": 30}
 
-        # RAG stage should populate chunks
-        assert len(result.retrieved_chunks) > 0
-        assert "chunk_id" in result.retrieved_chunks[0]
-        assert "text" in result.retrieved_chunks[0]
-        assert "chapter" in result.retrieved_chunks[0]
+            result = await service.process_chat(context)
+
+            # RAG stage should populate chunks
+            assert len(result.retrieved_chunks) > 0
+            assert "chunk_id" in result.retrieved_chunks[0]
+            assert "text" in result.retrieved_chunks[0]
+            assert "chapter" in result.retrieved_chunks[0]
 
     @pytest.mark.asyncio
     async def test_answer_stage_generates_response(self):
@@ -248,13 +263,29 @@ class TestOrchestrationPipeline:
 
         context = PipelineContext(query="Test", user_id="user_1", session_id="s1")
 
-        result = await service.process_chat(context)
+        # Mock the agent calls
+        with patch("src.services.orchestration_service.retrieve_context") as mock_rag, \
+             patch("src.services.orchestration_service.generate_answer") as mock_answer, \
+             patch("src.services.orchestration_service.apply_tone") as mock_tone, \
+             patch("src.services.orchestration_service.validate_response") as mock_safety:
+            mock_rag.return_value = {
+                "chunks": [
+                    {"chunk_id": "c1", "text": "ROS 2 info", "chapter": "Module 1", "section": "Intro"},
+                    {"chunk_id": "c2", "text": "More info", "chapter": "Module 2", "section": "Advanced"},
+                ],
+                "latency_ms": 100,
+            }
+            mock_answer.return_value = {"response": "Test response", "latency_ms": 200, "sources_used": ["c1", "c2"]}
+            mock_tone.return_value = {"response": "Toned response", "latency_ms": 50}
+            mock_safety.return_value = {"validation_status": "approved", "latency_ms": 30}
 
-        # Sources should be populated from retrieved chunks
-        assert len(result.sources) > 0
-        for source in result.sources:
-            assert "chapter" in source
-            assert "section" in source
+            result = await service.process_chat(context)
+
+            # Sources should be populated from retrieved chunks
+            assert len(result.sources) > 0
+            for source in result.sources:
+                assert "chapter" in source
+                assert "section" in source
 
 
 class TestPipelineContextFlowCompletion:
@@ -274,16 +305,31 @@ class TestPipelineContextFlowCompletion:
             user_level="intermediate",
         )
 
-        result = await service.process_chat(context)
+        # Mock the agent calls
+        with patch("src.services.orchestration_service.retrieve_context") as mock_rag, \
+             patch("src.services.orchestration_service.generate_answer") as mock_answer, \
+             patch("src.services.orchestration_service.apply_tone") as mock_tone, \
+             patch("src.services.orchestration_service.validate_response") as mock_safety:
+            mock_rag.return_value = {
+                "chunks": [
+                    {"chunk_id": "c1", "text": "DDS communication", "chapter": "Module 1", "section": "DDS"},
+                ],
+                "latency_ms": 100,
+            }
+            mock_answer.return_value = {"response": "ROS 2 uses DDS middleware.", "latency_ms": 200, "sources_used": ["c1"]}
+            mock_tone.return_value = {"response": "ROS 2 uses DDS middleware for reliable communication.", "latency_ms": 50}
+            mock_safety.return_value = {"validation_status": "approved", "latency_ms": 30}
 
-        # Verify complete output
-        assert result.query == "How does ROS 2 communication work?"
-        assert result.selected_text == "ROS 2 uses DDS for communication."
-        assert result.tone == "english"
-        assert result.user_level == "intermediate"
-        assert result.toned_response
-        assert result.sources
-        assert result.total_latency_ms() > 0
+            result = await service.process_chat(context)
+
+            # Verify complete output
+            assert result.query == "How does ROS 2 communication work?"
+            assert result.selected_text == "ROS 2 uses DDS for communication."
+            assert result.tone == "english"
+            assert result.user_level == "intermediate"
+            assert result.toned_response
+            assert result.sources
+            assert result.total_latency_ms() > 0
 
     @pytest.mark.asyncio
     async def test_pipeline_with_conversation_history(self):

@@ -52,27 +52,43 @@ class GeminiService:
         Rotate to next available API key.
 
         Cycles through configured keys when one is exhausted.
+        Tracks the number of rotations to detect when all keys are exhausted.
 
         Returns:
             Next API key
 
         Raises:
-            GeminiError: If all keys are exhausted
+            GeminiError: If all keys are exhausted (rotated back to starting key)
         """
-        exhausted_count = 0
-        for i in range(len(self.api_keys)):
-            self.current_key_index = (self.current_key_index + 1) % len(self.api_keys)
-            exhausted_count += 1
+        if not self.api_keys:
+            raise GeminiError("No API keys configured")
 
-            if exhausted_count >= len(self.api_keys):
-                logger.error("All Gemini API keys exhausted")
-                raise GeminiError(
-                    "Your today's limit of AI Guide is exceeded. Please try again tomorrow."
-                )
+        # Track how many rotations we've done
+        if not hasattr(self, '_rotation_count'):
+            self._rotation_count = 0
+            self._rotation_start_index = self.current_key_index
+
+        # Rotate to next key
+        self.current_key_index = (self.current_key_index + 1) % len(self.api_keys)
+        self._rotation_count += 1
+
+        # Check if we've cycled through all keys
+        if self._rotation_count >= len(self.api_keys):
+            logger.error("All Gemini API keys exhausted")
+            # Reset for next round
+            self._rotation_count = 0
+            raise GeminiError(
+                "Your today's limit of AI Guide is exceeded. Please try again tomorrow."
+            )
 
         key = self._get_current_api_key()
         logger.info(f"Rotated to API key index {self.current_key_index}")
         return key
+
+    def _reset_rotation_tracking(self) -> None:
+        """Reset rotation tracking for a new request."""
+        self._rotation_count = 0
+        self._rotation_start_index = self.current_key_index
 
     def _get_cache_key(self, query: str, context: str) -> str:
         """
@@ -142,6 +158,9 @@ class GeminiService:
         Raises:
             GeminiError: If generation fails or all keys exhausted
         """
+        # Reset rotation tracking for this new request
+        self._reset_rotation_tracking()
+
         # Check cache first
         cached_response = self._check_cache(query, context)
         if cached_response:
@@ -314,21 +333,58 @@ class GeminiService:
 
     def get_key_status(self) -> Dict[str, Any]:
         """
-        Get status of all API keys.
+        Get status of all API keys including rotation metrics.
 
         Returns:
-            Dictionary with status of each key
+            Dictionary with status of each key and rotation metrics
         """
         status = {
             "current_key_index": self.current_key_index,
             "total_keys": len(self.api_keys),
-            "keys": {},
+            "keys": [],
+            "api_rotations_today": getattr(self, '_total_rotations_today', 0),
+            "last_rotation": getattr(self, '_last_rotation_timestamp', None),
         }
 
+        # Get key statuses from database if available
         for i, _ in enumerate(self.api_keys):
             key_id = f"gemini_{i + 1}"
-            status["keys"][key_id] = {
-                "status": "active" if i != self.current_key_index else "in_use",
-            }
+            key_status = "active"
+
+            if i == self.current_key_index:
+                key_status = "in_use"
+            elif self.db_session:
+                try:
+                    quota = self.db_session.query(APIKeyQuota).filter_by(api_key_id=key_id).first()
+                    if quota and quota.status == "exhausted":
+                        key_status = "exhausted"
+                except Exception:
+                    pass
+
+            status["keys"].append(key_status)
 
         return status
+
+    def _log_rotation(self, from_index: int, to_index: int) -> None:
+        """Log rotation event for metrics.
+
+        Args:
+            from_index: Previous key index
+            to_index: New key index
+        """
+        if not hasattr(self, '_total_rotations_today'):
+            self._total_rotations_today = 0
+            self._rotations_reset_date = datetime.utcnow().date()
+
+        # Reset if new day
+        if datetime.utcnow().date() > self._rotations_reset_date:
+            self._total_rotations_today = 0
+            self._rotations_reset_date = datetime.utcnow().date()
+
+        self._total_rotations_today += 1
+        self._last_rotation_timestamp = datetime.utcnow().isoformat()
+
+        logger.info(
+            f"API Key rotation: key_{from_index + 1} -> key_{to_index + 1} | "
+            f"Total rotations today: {self._total_rotations_today}"
+        )

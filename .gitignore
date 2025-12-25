@@ -5,3 +5,17 @@ build/
 .env
 .DS_Store
 *.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.coverage
+htmlcov/
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Credentials (never commit)
+*.credentials.txt
